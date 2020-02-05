@@ -46,6 +46,7 @@ export default function HomeScreen() {
       onIndexChange={setIndex}
       initialLayout={initialLayout}
       swipeEnabled={false}
+
     />
   );
 }
@@ -53,4 +54,3 @@ export default function HomeScreen() {
 HomeScreen.navigationOptions = {
   title: "Activity Insight",
 };
-

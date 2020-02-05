@@ -5,6 +5,13 @@ import PieChart from "react-native-pie-chart";
 
 const currentMonth = "February";
 
+const wasteValue = 30;
+const wasteColor = "#54D8FF";
+const recyclableValue = 40;
+const recyclableColor = "#CAFF54";
+const compostValue = 50;
+const compostColor = "#FFF854";
+
 const CurrentMonthView = () => (
     <View>
         <View>
@@ -14,23 +21,28 @@ const CurrentMonthView = () => (
             <PieChart
                 style={{marginTop: 25, marginBottom: 25}}
                 chart_wh={250}
-                series={[100, 150, 300]}
-                sliceColor={["#CAFF54","#FFF854","#54D8FF"]}
+                series={[compostValue, recyclableValue, wasteValue]}
+                sliceColor={[compostColor, recyclableColor, wasteColor]}
                 doughnut={true}
                 coverRadius={0.60}
             />
-            <Text style={{position: "absolute", alignSelf: "center", top: 140}}>Disposable Activity</Text>
+            <Text style={{position: "absolute", alignSelf: "center", top: 140, textAlign: "center"}}>{"Disposable\nActivity"}</Text>
         </View>
+        <View style={{flex: 1, flexDirection: "row", justifyContent: "center"}}>
+            <View style={{marginRight: 50}}>
+                <Text>Waste</Text>
+                <Text>Recyclable</Text>
+                <Text>Compost</Text>
+            </View>
+            <View style={{marginLeft: 50}}>
+                <Text>{wasteValue}%</Text>
+                <Text>{recyclableValue}%</Text>
+                <Text>{compostValue}%</Text>
+            </View>
 
-
-        <View>
-           <Text>Waste = {30} </Text>
-           <Text>Recyclable = {30} </Text>
-           <Text>Compost = {40} </Text>
         </View>
     </View>
 );
-
 
 export default function HomeScreenActivityDonut(props) {
     return (
@@ -39,5 +51,3 @@ export default function HomeScreenActivityDonut(props) {
         </View>
   );
 }
-
-
