@@ -4,15 +4,14 @@ import { TabView, SceneMap } from "react-native-tab-view";
 import { useNavigation } from "@react-navigation/native";
 import PieChart from "react-native-pie-chart";
 import { Ionicons } from '@expo/vector-icons';
+import ZotBinColors from '../../constants/ZotBinColors';
+import ZotBinsObservationsGetRequest from "../../api/ZotBinsObservationsGetRequest";
 
 const currentMonth = "February";
-
-const wasteValue = 30;
-const wasteColor = "#54D8FF";
-const recyclableValue = 40;
-const recyclableColor = "#CAFF54";
-const compostValue = 50;
-const compostColor = "#FFF854";
+const wasteValue = 30; //ZotBinsObservationsGetRequest("waste");
+const recyclableValue = 40; //ZotBinsObservationsGetRequest("recycle");
+const compostValue = 50; //ZotBinsObservationsGetRequest("compost");
+// TODO: Need to use componentDidMount to wait for the GET request result
 
 const HomeScreenDonutView = () => (
     <View style={{flex: 1}}>
@@ -24,7 +23,7 @@ const HomeScreenDonutView = () => (
                 style={{marginTop: 25, marginBottom: 25}}
                 chart_wh={250}
                 series={[compostValue, recyclableValue, wasteValue]}
-                sliceColor={[compostColor, recyclableColor, wasteColor]}
+                sliceColor={[ZotBinColors.compostColor, ZotBinColors.recyclableColor, ZotBinColors.wasteColor]}
                 doughnut={true}
                 coverRadius={0.60}
             />
