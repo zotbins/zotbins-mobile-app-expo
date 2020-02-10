@@ -3,14 +3,13 @@ import { Platform } from "react-native";
 import { createStackNavigator } from "react-navigation-stack";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 
-import TabBarIcon from "../components/TabBarIcon";
+import TabBarIcon from "../components/TabNavigatorComponents/TabBarIcon";
 import HomeScreen from "../screens/HomeScreen";
 import LinksScreen from "../screens/LinksScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import TrendsScreen from "../screens/TrendsScreen";
 import WasteScreen from "../screens/WasteScreen";
-
-import Colors from "../constants/Colors";
+import ZotBinColors from "../constants/ZotBinColors";
 
 const config = Platform.select({
   web: { headerMode: "screen" },
@@ -29,8 +28,8 @@ const HomeStack = createStackNavigator(
 HomeStack.navigationOptions = {
   tabBarLabel: "INSIGHT",
   tabBarOptions: {
-    activeTintColor: Colors.tintColor,
-    inactiveTintColor: Colors.inactiveColor
+    activeTintColor: ZotBinColors.tintColor,
+    inactiveTintColor: ZotBinColors.inactiveColor
   },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -56,8 +55,8 @@ const LinksStack = createStackNavigator(
 LinksStack.navigationOptions = {
   tabBarLabel: "TOOLS",
   tabBarOptions: {
-    activeTintColor: Colors.tintColor,
-    inactiveTintColor: Colors.inactiveColor
+    activeTintColor: ZotBinColors.tintColor,
+    inactiveTintColor: ZotBinColors.inactiveColor
   },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === "ios" ? "ios-link" : "md-link"} />
@@ -76,8 +75,8 @@ const SettingsStack = createStackNavigator(
 SettingsStack.navigationOptions = {
   tabBarLabel: "ACCOUNT",
   tabBarOptions: {
-    activeTintColor: Colors.tintColor,
-    inactiveTintColor: Colors.inactiveColor
+    activeTintColor: ZotBinColors.tintColor,
+    inactiveTintColor: ZotBinColors.inactiveColor
   },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === "ios" ? "ios-options" : "md-options"} />

@@ -52,11 +52,11 @@ export default function HomeScreenInsightComponent(props) {
                 <HomeScreenDonutView/>
                 <View style={{backgroundColor: "white", marginBottom: 25}}>
                     <TouchableOpacity style={{paddingTop: 10, paddingBottom: 10, borderBottomWidth: 1}} onPress={() => props.navigation.navigate("Trends")}>
-                        <Text>View Personal Trends</Text>
+                        <Text>View Personal Trends <Ionicons name={"md-arrow-dropright"}/></Text>
 
                     </TouchableOpacity>
                     <TouchableOpacity style={{paddingTop: 10, paddingBottom: 10, borderBottomWidth: 1}}  onPress={() => props.navigation.navigate("Waste")}>
-                        <Text>View Waste Activity</Text>
+                        <Text>View Waste Activity <Ionicons name={"md-arrow-dropright"}/></Text>
                     </TouchableOpacity>
                 </View>
             </View>

@@ -15,6 +15,6 @@ If there are any other issues, close your terminal and go back to Step 4.
 **The original name of this repo was "zotbins-mobile-app-android".**
 # Common Errors  
 1. **I installed a new dependency and didn't change anything else. Now the app won't run...**
-a. Try deleting "node-modules" and "package-lock.json"
-b. Execute "expo install", then execute "expo start -c".
+Try deleting "node-modules" and "package-lock.json".
+Execute "expo install", then execute "expo start -c".
 *Running these commands will reinstall your dependencies.*

@@ -1,61 +1,60 @@
-import * as WebBrowser from 'expo-web-browser';
-import React from 'react';
-import {
-  Image,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import React from "react";
+import { Text, View } from "react-native";
+import { TabBar, TabView, SceneMap } from "react-native-tab-view";
 
-import { TabView, SceneMap } from 'react-native-tab-view';
-import PieChart from 'react-native-pie-chart';
-
-import HomeScreenInsightComponent from '../components/HomeScreenComponents/HomeScreenInsightComponent';
-
-
-
-const initialLayout = { flex: 1 };
+import HomeScreenInsightComponent from "../components/HomeScreenComponents/HomeScreenInsightComponent";
+import ZotBinColors from "../constants/ZotBinColors";
+import ZotBinScreenNavOptions from "../constants/ZotBinScreenNavOptions";
 
 export default function HomeScreen(props) {
+    // Personal Insight Tab
+    const HomeTabInsight = () => (
+        <View>
+            <HomeScreenInsightComponent {...props}/>
+        </View>
+    );
+    // Social Tab... TODO: Talk about implementing the social feature...
+    const HomeTabSocial = () => (
+        <View>
+            <Text>Second route</Text>
+            <Text>Third route</Text>
+        </View>
+    );
 
-  const HomeTabInsight = () => (
-    <View>
-        <HomeScreenInsightComponent {...props}/>
-    </View>
-  );
+    // Start this screen in state 0 "homeTabInsight"
+    const [index, setIndex] = React.useState(0);
+    const [routes] = React.useState([
+        {key: "homeTabInsight", title: "Personal Insight"},
+        {key: "homeTabSocial", title: "Social"},
+    ]);
 
-  const HomeTabSocial = () => (
-    <View>
-        <Text>Second route</Text>
-        <Text>Third route</Text>
-    </View>
-  );
+    const renderScene = SceneMap({
+        homeTabInsight: HomeTabInsight,
+        homeTabSocial: HomeTabSocial,
+    });
 
-  const [index, setIndex] = React.useState(0);
-  const [routes] = React.useState([
-    { key: 'homeTabInsight', title: 'Personal Insight' },
-    { key: 'homeTabSocial', title: 'Social' },
-  ]);
+    const initialLayout = {flex: 1};
 
-  const renderScene = SceneMap({
-    homeTabInsight: HomeTabInsight,
-    homeTabSocial: HomeTabSocial,
-  });
-
-  return (
-    <TabView
-      navigationState={{ index, routes }}
-      renderScene={renderScene}
-      onIndexChange={setIndex}
-      initialLayout={initialLayout}
-      swipeEnabled={false}
-    />
-  );
+    return (
+        <TabView
+            navigationState={{index, routes}}
+            renderScene={renderScene}
+            onIndexChange={setIndex}
+            initialLayout={initialLayout}
+            swipeEnabled={false}
+            renderTabBar={(props) =>
+                <TabBar
+                    {...props}
+                    style={{
+                        backgroundColor: "white",
+                        elevation: 0
+                    }}
+                    indicatorStyle={{backgroundColor: ZotBinColors.inactiveColor}}
+                    labelStyle={{color: ZotBinColors.inactiveColor}}
+                />
+            }
+        />
+    );
 }
 
-HomeScreen.navigationOptions = {
-  title: "Activity Insight",
-};
+HomeScreen.navigationOptions = ZotBinScreenNavOptions("Activity Insight");
