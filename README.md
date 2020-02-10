@@ -11,7 +11,8 @@ Before doing anything, make sure Android Studio is installed and you have an And
 7. Click "Run an Android device/emulator" and it should connect with your Virtual Device.  
 # Notes  
 The workflow is a bit tedious, since you have to wait for the app to update on your Virtual Device to see the changes you've made. If the app isn't updating automatically, close the app on your Virtual Device and go back to Step 6.  
-If there are any other issues, close your terminal and go back to Step 4.  
+If there are any other issues, close your terminal and go back to Step 4.
+**The original name of this repo was "zotbins-mobile-app-android".**
 # Common Errors  
 1. **I installed a new dependency and didn't change anything else. Now the app won't run...**
 a. Try deleting "node-modules" and "package-lock.json"
