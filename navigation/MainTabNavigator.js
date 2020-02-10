@@ -1,23 +1,27 @@
-import React from 'react';
-import { Platform } from 'react-native';
-import { createStackNavigator } from 'react-navigation-stack';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
+import React from "react";
+import { Platform } from "react-native";
+import { createStackNavigator } from "react-navigation-stack";
+import { createBottomTabNavigator } from "react-navigation-tabs";
 
-import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import TabBarIcon from "../components/TabBarIcon";
+import HomeScreen from "../screens/HomeScreen";
+import LinksScreen from "../screens/LinksScreen";
+import SettingsScreen from "../screens/SettingsScreen";
+import TrendsScreen from "../screens/TrendsScreen";
+import WasteScreen from "../screens/WasteScreen";
 
-import Colors from '../constants/Colors';
+import Colors from "../constants/Colors";
 
 const config = Platform.select({
-  web: { headerMode: 'screen' },
+  web: { headerMode: "screen" },
   default: {},
 });
 
 const HomeStack = createStackNavigator(
   {
     Home: HomeScreen,
+    Trends: TrendsScreen,
+    Waste: WasteScreen
   },
   config
 );
@@ -32,15 +36,15 @@ HomeStack.navigationOptions = {
     <TabBarIcon
       focused={focused}
       name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+        Platform.OS === "ios"
+          ? `ios-information-circle${focused ? "" : "-outline"}`
+          : "md-information-circle"
       }
     />
   ),
 };
 
-HomeStack.path = '';
+HomeStack.path = "";
 
 const LinksStack = createStackNavigator(
   {
@@ -50,17 +54,17 @@ const LinksStack = createStackNavigator(
 );
 
 LinksStack.navigationOptions = {
-  tabBarLabel: 'TOOLS',
+  tabBarLabel: "TOOLS",
   tabBarOptions: {
     activeTintColor: Colors.tintColor,
     inactiveTintColor: Colors.inactiveColor
   },
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === "ios" ? "ios-link" : "md-link"} />
   ),
 };
 
-LinksStack.path = '';
+LinksStack.path = "";
 
 const SettingsStack = createStackNavigator(
   {
@@ -70,24 +74,24 @@ const SettingsStack = createStackNavigator(
 );
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: 'ACCOUNT',
+  tabBarLabel: "ACCOUNT",
   tabBarOptions: {
     activeTintColor: Colors.tintColor,
     inactiveTintColor: Colors.inactiveColor
   },
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+    <TabBarIcon focused={focused} name={Platform.OS === "ios" ? "ios-options" : "md-options"} />
   ),
 };
 
-SettingsStack.path = '';
+SettingsStack.path = "";
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LinksStack,
-  SettingsStack,
+  SettingsStack
 });
 
-tabNavigator.path = '';
+tabNavigator.path = "";
 
 export default tabNavigator;

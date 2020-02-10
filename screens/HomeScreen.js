@@ -13,21 +13,27 @@ import {
 import { TabView, SceneMap } from 'react-native-tab-view';
 import PieChart from 'react-native-pie-chart';
 
-import HomeScreenActivityDonut from '../components/homescreencomponents/HomeScreenActivityDonut';
+import HomeScreenInsightComponent from '../components/HomeScreenComponents/HomeScreenInsightComponent';
 
-const HomeTabInsight = () => (
-  <View>
-     <HomeScreenActivityDonut />
-  </View>
-);
 
-const HomeTabSocial = () => (
-  <View><Text>Second route</Text></View>
-);
 
 const initialLayout = { flex: 1 };
 
-export default function HomeScreen() {
+export default function HomeScreen(props) {
+
+  const HomeTabInsight = () => (
+    <View>
+        <HomeScreenInsightComponent {...props}/>
+    </View>
+  );
+
+  const HomeTabSocial = () => (
+    <View>
+        <Text>Second route</Text>
+        <Text>Third route</Text>
+    </View>
+  );
+
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     { key: 'homeTabInsight', title: 'Personal Insight' },
@@ -46,7 +52,6 @@ export default function HomeScreen() {
       onIndexChange={setIndex}
       initialLayout={initialLayout}
       swipeEnabled={false}
-
     />
   );
 }
