@@ -3,7 +3,8 @@ import { Platform } from "react-native";
 import { createStackNavigator } from "react-navigation-stack";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 
-import TabBarIcon from "../components/TabNavigatorComponents/TabBarIcon";
+import IoniconsTabBarIcon from "../components/TabNavigatorComponents/IoniconsTabBarIcon";
+import AntDesignTabBarIcon from "../components/TabNavigatorComponents/AntDesignTabBarIcon";
 import HomeScreen from "../screens/HomeScreen";
 import LinksScreen from "../screens/LinksScreen";
 import SettingsScreen from "../screens/SettingsScreen";
@@ -32,13 +33,9 @@ HomeStack.navigationOptions = {
     inactiveTintColor: ZotBinColors.inactiveColor
   },
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon
+    <AntDesignTabBarIcon
       focused={focused}
-      name={
-        Platform.OS === "ios"
-          ? `ios-information-circle${focused ? "" : "-outline"}`
-          : "md-information-circle"
-      }
+      name={"barschart"}
     />
   ),
 };
@@ -59,7 +56,7 @@ LinksStack.navigationOptions = {
     inactiveTintColor: ZotBinColors.inactiveColor
   },
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === "ios" ? "ios-link" : "md-link"} />
+    <IoniconsTabBarIcon focused={focused} name={"md-trash"} />
   ),
 };
 
@@ -79,7 +76,7 @@ SettingsStack.navigationOptions = {
     inactiveTintColor: ZotBinColors.inactiveColor
   },
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === "ios" ? "ios-options" : "md-options"} />
+    <IoniconsTabBarIcon focused={focused} name={"md-person"} />
   ),
 };
 

@@ -14,9 +14,9 @@ const compostValue = 50; //ZotBinsObservationsGetRequest("compost");
 // TODO: Need to use componentDidMount to wait for the GET request result
 
 const HomeScreenDonutView = () => (
-    <View style={{flex: 1}}>
+    <View style={{flex: 2}}>
         <View style={{flex: 1, backgroundColor: "white", justifyContent: "center"}}>
-            <Text style={{textAlign: "center"}}>{currentMonth}</Text>
+            <Text style={{textAlign: "center", fontSize: 18, color: ZotBinColors.inactiveColor}}>{currentMonth}</Text>
         </View>
         <View style={{flex: 5, backgroundColor: "white", justifyContent: "center"}}>
             <PieChart
@@ -27,18 +27,22 @@ const HomeScreenDonutView = () => (
                 doughnut={true}
                 coverRadius={0.60}
             />
-            <Text style={{position: "absolute", alignSelf: "center", textAlign: "center"}}>{"Disposable\nActivity"}</Text>
+            <Text style={{position: "absolute", alignSelf: "center", textAlign: "center", fontSize: 20, fontWeight: "bold"}}>{"Disposable\nActivity"}</Text>
         </View>
-        <View style={{flex: 2, flexDirection: "row", justifyContent: "center", backgroundColor: "white"}}>
-            <View style={{marginRight: 50}}>
-                <Text>Waste</Text>
-                <Text>Recyclable</Text>
-                <Text>Compost</Text>
-            </View>
-            <View style={{marginLeft: 50}}>
-                <Text>{wasteValue}%</Text>
-                <Text>{recyclableValue}%</Text>
-                <Text>{compostValue}%</Text>
+        <View style={{flex: 1, justifyContent: "center", backgroundColor: "white"}}>
+            <View style={{flex: 1, flexDirection: "row"}}>
+                <View style={{flex: 1, alignItems: "center", borderColor: ZotBinColors.wasteColor, borderBottomWidth: 5}}>
+                    <Text style={{fontSize: 22}}>{wasteValue}%</Text>
+                    <Text style={{fontSize: 16, color: ZotBinColors.inactiveColor}}>Waste</Text>
+                </View>
+                <View style={{flex: 1, alignItems: "center", borderColor: ZotBinColors.recyclableColor, borderBottomWidth: 5}}>
+                    <Text style={{fontSize: 22}}>{recyclableValue}%</Text>
+                    <Text style={{fontSize: 16, color: ZotBinColors.inactiveColor}}>Recycle</Text>
+                </View>
+                <View style={{flex: 1, alignItems: "center", borderColor: ZotBinColors.compostColor, borderBottomWidth: 5}}>
+                    <Text style={{fontSize: 22}}>{compostValue}%</Text>
+                    <Text style={{fontSize: 16, color: ZotBinColors.inactiveColor}}>Compost</Text>
+                </View>
             </View>
         </View>
     </View>
@@ -49,13 +53,12 @@ export default function HomeScreenInsightComponent(props) {
         <View style={{alignItems: "center"}}>
             <View>
                 <HomeScreenDonutView/>
-                <View style={{backgroundColor: "white", marginBottom: 25}}>
-                    <TouchableOpacity style={{paddingTop: 10, paddingBottom: 10, borderBottomWidth: 1}} onPress={() => props.navigation.navigate("Trends")}>
-                        <Text>View Personal Trends <Ionicons name={"md-arrow-dropright"}/></Text>
-
+                <View style={{flex: 1, justifyContent: "center", backgroundColor: "white", marginBottom: 25}}>
+                    <TouchableOpacity style={{marginBottom: 10, paddingTop: 15, paddingBottom: 15, borderBottomWidth: 2}} onPress={() => props.navigation.navigate("Trends")}>
+                        <Text style={{fontSize: 18}}>View Personal Trends <Ionicons name={"md-arrow-dropright"}/></Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{paddingTop: 10, paddingBottom: 10, borderBottomWidth: 1}}  onPress={() => props.navigation.navigate("Waste")}>
-                        <Text>View Waste Activity <Ionicons name={"md-arrow-dropright"}/></Text>
+                    <TouchableOpacity style={{marginTop: 10, paddingTop: 15, paddingBottom: 15, borderBottomWidth: 2}}  onPress={() => props.navigation.navigate("Waste")}>
+                        <Text style={{fontSize: 18}}>View Waste Activity <Ionicons name={"md-arrow-dropright"}/></Text>
                     </TouchableOpacity>
                 </View>
             </View>
