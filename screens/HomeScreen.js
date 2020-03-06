@@ -3,6 +3,7 @@ import { Text, View } from "react-native";
 import { TabBar, TabView, SceneMap } from "react-native-tab-view";
 
 import HomeScreenInsightComponent from "../components/HomeScreenComponents/HomeScreenInsightComponent";
+import HomeScreenSocialComponent from "../components/HomeScreenComponents/HomeScreenSocialComponent";
 import ZotBinColors from "../constants/ZotBinColors";
 import ZotBinScreenNavOptions from "../constants/ZotBinScreenNavOptions";
 
@@ -16,8 +17,7 @@ export default function HomeScreen(props) {
     // Social Tab... TODO: Talk about implementing the social feature...
     const HomeTabSocial = () => (
         <View>
-            <Text>Second route</Text>
-            <Text>Third route</Text>
+            <HomeScreenSocialComponent {...props}/>
         </View>
     );
 

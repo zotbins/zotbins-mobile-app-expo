@@ -7,10 +7,10 @@ import { Ionicons } from '@expo/vector-icons';
 import ZotBinColors from '../../constants/ZotBinColors';
 import ZotBinsObservationsGetRequest from "../../api/ZotBinsObservationsGetRequest";
 
-const currentMonth = "February";
-const wasteValue = 30; //ZotBinsObservationsGetRequest("waste");
-const recyclableValue = 40; //ZotBinsObservationsGetRequest("recycle");
-const compostValue = 50; //ZotBinsObservationsGetRequest("compost");
+const currentMonth = "March";
+const myWasteValue = 55; //ZotBinsObservationsGetRequest("waste");
+const myRecyclableValue = 31; //ZotBinsObservationsGetRequest("recycle");
+const myCompostValue = 14; //ZotBinsObservationsGetRequest("compost");
 // TODO: Need to use componentDidMount to wait for the GET request result
 
 const HomeScreenDonutView = () => (
@@ -22,7 +22,7 @@ const HomeScreenDonutView = () => (
             <PieChart
                 style={{marginTop: 25, marginBottom: 25}}
                 chart_wh={250}
-                series={[compostValue, recyclableValue, wasteValue]}
+                series={[myCompostValue, myRecyclableValue, myWasteValue]}
                 sliceColor={[ZotBinColors.compostColor, ZotBinColors.recyclableColor, ZotBinColors.wasteColor]}
                 doughnut={true}
                 coverRadius={0.60}
@@ -32,15 +32,15 @@ const HomeScreenDonutView = () => (
         <View style={{flex: 1, justifyContent: "center", backgroundColor: "white"}}>
             <View style={{flex: 1, flexDirection: "row"}}>
                 <View style={{flex: 1, alignItems: "center", borderColor: ZotBinColors.wasteColor, borderBottomWidth: 5}}>
-                    <Text style={{fontSize: 22}}>{wasteValue}%</Text>
+                    <Text style={{fontSize: 22}}>{myWasteValue}%</Text>
                     <Text style={{fontSize: 16, color: ZotBinColors.inactiveColor}}>Waste</Text>
                 </View>
                 <View style={{flex: 1, alignItems: "center", borderColor: ZotBinColors.recyclableColor, borderBottomWidth: 5}}>
-                    <Text style={{fontSize: 22}}>{recyclableValue}%</Text>
+                    <Text style={{fontSize: 22}}>{myRecyclableValue}%</Text>
                     <Text style={{fontSize: 16, color: ZotBinColors.inactiveColor}}>Recycle</Text>
                 </View>
                 <View style={{flex: 1, alignItems: "center", borderColor: ZotBinColors.compostColor, borderBottomWidth: 5}}>
-                    <Text style={{fontSize: 22}}>{compostValue}%</Text>
+                    <Text style={{fontSize: 22}}>{myCompostValue}%</Text>
                     <Text style={{fontSize: 16, color: ZotBinColors.inactiveColor}}>Compost</Text>
                 </View>
             </View>
