@@ -2,8 +2,8 @@ import React from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 import { TabView, SceneMap } from "react-native-tab-view";
 import { useNavigation } from "@react-navigation/native";
-import { Ionicons } from '@expo/vector-icons';
-import ZotBinColors from '../../constants/ZotBinColors';
+import { Ionicons } from "@expo/vector-icons";
+import ZotBinColors from "../../constants/ZotBinColors";
 import ZotBinsObservationsGetRequest from "../../api/ZotBinsObservationsGetRequest";
 import { Dimensions } from "react-native";
 
@@ -48,7 +48,7 @@ const HomeScreenStackedBarChartView = () => (
         <View style={{flex: 5, backgroundColor: "white", justifyContent: "center"}}>
             <StackedBarChart
                 data={{
-                labels: ["Avg.", 'You'],
+                labels: ["Avg.", "You"],
                 legend: ["Waste", "Recyclable", "Compost"],
                 data: [
                     [averageWasteValue, averageRecyclableValue, averageCompostValue],
@@ -58,19 +58,20 @@ const HomeScreenStackedBarChartView = () => (
                 }}
                 width={screenWidth - 100}
                 height={(screenHeight / 2) - 150}
-                chartConfig={{
-                backgroundColor: '#1cc910',
-                backgroundGradientFrom: '#eff3ff',
-                backgroundGradientTo: '#efefef',
-                decimalPlaces: 2,
-                color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-                style: {
-                    borderRadius: 16,
-                },
-                }}
-                style={{
-                    marginVertical: 0,
-                    borderRadius: 16,
+                chartConfig={
+                    {
+                        backgroundColor: ZotBinColors.whiteColor,
+                        backgroundGradientFrom: ZotBinColors.whiteColor,
+                        backgroundGradientTo: ZotBinColors.whiteColor,
+                        decimalPlaces: 2,
+                        color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+                        style: {
+                            borderRadius: 16,
+                        },
+                    }}
+                    style={{
+                        marginVertical: 0,
+                        borderRadius: 16,
                 }}
             />
         </View>
