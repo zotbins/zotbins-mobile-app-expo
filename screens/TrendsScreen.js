@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import { Dimensions } from "react-native";
 import ZotBinColors from '../constants/ZotBinColors';
+import CalculateDiversionRate from "../api/CalculateDiversionRate";
 
 import {
     LineChart,
@@ -20,17 +21,17 @@ import {
 const averageWasteValue = 67; //ZotBinsObservationsGetRequest("waste");
 const averageRecyclableValue = 25; //ZotBinsObservationsGetRequest("recycle");
 const averageCompostValue = 8; //ZotBinsObservationsGetRequest("compost");
-const averageDiversionValue = 5;
+const averageDiversionValue = CalculateDiversionRate(averageRecyclableValue, averageCompostValue, averageWasteValue);
 
 const minWasteValue = 40;
-const minRecyclableValue = 20
-const minCompostValue = 5
-const minDiversionValue = 4;
+const minRecyclableValue = 20;
+const minCompostValue = 5;
+const minDiversionValue = CalculateDiversionRate(minRecyclableValue, minCompostValue, minWasteValue);
 
-const maxWasteValue = 74
-const maxRecyclableValue = 50
-const maxCompostValue = 23
-const maxDiversionValue = 10;
+const maxWasteValue = 74;
+const maxRecyclableValue = 50;
+const maxCompostValue = 14;
+const maxDiversionValue = CalculateDiversionRate(maxRecyclableValue, maxCompostValue, maxWasteValue);
 
 // Needed constants
 const currentMonth = "March";

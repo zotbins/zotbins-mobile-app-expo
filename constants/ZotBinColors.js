@@ -13,10 +13,11 @@ export default {
     warningText: "#666804",
     noticeBackground: tintColor,
     noticeText: "#fff",
-    wasteColor: "#54D8FF",
-    recyclableColor: "#CAFF54",
-    compostColor: "#FFF854",
+    wasteColor: "#616161",
+    recyclableColor: "#3876AC",
+    compostColor: "#357B23",
     graphBackgroundColor: "#e3e3e3",
     whiteColor: "#FFFFFF",
-    blackColor: "#000000"
+    blackColor: "#000000",
+    lightGrayColor: "#e6e6e6"
 };

@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import ZotBinColors from "../../constants/ZotBinColors";
 import ZotBinsObservationsGetRequest from "../../api/ZotBinsObservationsGetRequest";
+import CalculateDiversionRate from "../../api/CalculateDiversionRate";
 import { Dimensions } from "react-native";
 
 import {
@@ -25,20 +26,13 @@ const myWasteValue = 55; //ZotBinsObservationsGetRequest("waste");
 const myRecyclableValue = 31; //ZotBinsObservationsGetRequest("recycle");
 const myCompostValue = 14; //ZotBinsObservationsGetRequest("compost");
 // Diversion Values
-const averageDiversionValue = calculateDiversionRate(averageRecyclableValue, averageCompostValue, averageWasteValue)
-const myDiversionValue = calculateDiversionRate(myRecyclableValue, myCompostValue, myWasteValue)
+const averageDiversionValue = CalculateDiversionRate(averageRecyclableValue, averageCompostValue, averageWasteValue)
+const myDiversionValue = CalculateDiversionRate(myRecyclableValue, myCompostValue, myWasteValue)
 const myDiversionPercentile = 74; //ZotBinsObservationsGetRequest("waste");
 // Needed constants
 const currentMonth = "March";
 const screenWidth = Dimensions.get("window").width;
 const screenHeight = Dimensions.get("window").height;
-
-function calculateDiversionRate(recycleValue, compostValue, wasteValue) {
-    let diversionValue = (recycleValue + compostValue)/(recycleValue + compostValue + wasteValue)
-    diversionValue = parseInt(diversionValue * 100)
-    return diversionValue
-}
-
 
 const HomeScreenStackedBarChartView = () => (
     <View style={{flex: 2}}>
