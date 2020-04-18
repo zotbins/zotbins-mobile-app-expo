@@ -7,6 +7,7 @@ import IoniconsTabBarIcon from "../components/TabNavigatorComponents/IoniconsTab
 import AntDesignTabBarIcon from "../components/TabNavigatorComponents/AntDesignTabBarIcon";
 import HomeScreen from "../screens/HomeScreen";
 import LinksScreen from "../screens/LinksScreen";
+import BarcodeScannerScreen from "../screens/BarcodeScannerScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import TrendsScreen from "../screens/TrendsScreen";
 import WasteScreen from "../screens/WasteScreen";
@@ -44,7 +45,7 @@ HomeStack.path = "";
 
 const LinksStack = createStackNavigator(
   {
-    Links: LinksScreen,
+    Links: BarcodeScannerScreen,
   },
   config
 );
