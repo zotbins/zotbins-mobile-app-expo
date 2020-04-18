@@ -43,14 +43,14 @@ HomeStack.navigationOptions = {
 
 HomeStack.path = "";
 
-const LinksStack = createStackNavigator(
+const BarcodeScannerStack = createStackNavigator(
   {
-    Links: BarcodeScannerScreen,
+    BarcodeScanner: BarcodeScannerScreen,
   },
   config
 );
 
-LinksStack.navigationOptions = {
+BarcodeScannerStack.navigationOptions = {
   tabBarLabel: "TOOLS",
   tabBarOptions: {
     activeTintColor: ZotBinColors.tintColor,
@@ -61,7 +61,7 @@ LinksStack.navigationOptions = {
   ),
 };
 
-LinksStack.path = "";
+BarcodeScannerStack.path = "";
 
 const SettingsStack = createStackNavigator(
   {
@@ -85,7 +85,7 @@ SettingsStack.path = "";
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  LinksStack,
+  BarcodeScannerStack,
   SettingsStack
 });
 
