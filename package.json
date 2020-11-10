@@ -6,7 +6,9 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "prettier": "prettier --write \"**/*.js\"",
+    "pre-commit": "lint-staged"
   },
   "jest": {
     "preset": "jest-expo"
@@ -43,7 +45,20 @@
     "@react-navigation/core": "^3.7.9",
     "@unimodules/core": "^5.1.2",
     "babel-preset-expo": "~8.0.0",
-    "jest-expo": "~36.0.1"
+    "jest-expo": "~36.0.1",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.0",
+    "prettier": "2.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write \"**/*.js\""
+    ]
   },
   "private": true
 }

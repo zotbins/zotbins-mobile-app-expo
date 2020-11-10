@@ -21,7 +21,7 @@ const HomeStack = createStackNavigator(
   {
     Home: HomeScreen,
     Trends: TrendsScreen,
-    Waste: WasteScreen
+    Waste: WasteScreen,
   },
   config
 );
@@ -30,13 +30,10 @@ HomeStack.navigationOptions = {
   tabBarLabel: "INSIGHT",
   tabBarOptions: {
     activeTintColor: ZotBinColors.tintColor,
-    inactiveTintColor: ZotBinColors.inactiveColor
+    inactiveTintColor: ZotBinColors.inactiveColor,
   },
   tabBarIcon: ({ focused }) => (
-    <AntDesignTabBarIcon
-      focused={focused}
-      name={"barschart"}
-    />
+    <AntDesignTabBarIcon focused={focused} name={"barschart"} />
   ),
 };
 
@@ -53,7 +50,7 @@ LinksStack.navigationOptions = {
   tabBarLabel: "TOOLS",
   tabBarOptions: {
     activeTintColor: ZotBinColors.tintColor,
-    inactiveTintColor: ZotBinColors.inactiveColor
+    inactiveTintColor: ZotBinColors.inactiveColor,
   },
   tabBarIcon: ({ focused }) => (
     <IoniconsTabBarIcon focused={focused} name={"md-trash"} />
@@ -73,7 +70,7 @@ SettingsStack.navigationOptions = {
   tabBarLabel: "ACCOUNT",
   tabBarOptions: {
     activeTintColor: ZotBinColors.tintColor,
-    inactiveTintColor: ZotBinColors.inactiveColor
+    inactiveTintColor: ZotBinColors.inactiveColor,
   },
   tabBarIcon: ({ focused }) => (
     <IoniconsTabBarIcon focused={focused} name={"md-person"} />
@@ -85,7 +82,7 @@ SettingsStack.path = "";
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LinksStack,
-  SettingsStack
+  SettingsStack,
 });
 
 tabNavigator.path = "";
