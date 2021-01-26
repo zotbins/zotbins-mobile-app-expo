@@ -1,12 +1,18 @@
-import React from "react";
-import { createAppContainer, createSwitchNavigator } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
+import { createAppContainer } from "react-navigation";
+import Home from "../screens/HomeView/Home";
+import BarcodeScanner from "../components/BarcodeScanner";
 
-import MainTabNavigator from "./MainTabNavigator";
+//import MainTabNavigator from "./MainTabNavigator";
 
-export default createAppContainer(
-  createSwitchNavigator({
-    // You could add another route here for authentication.
-    // Read more at https://reactnavigation.org/docs/en/auth-flow.html
-    Main: MainTabNavigator,
-  })
-);
+const screens = {
+  Home: {
+    screen: Home,
+  },
+  BarcodeScanner: {
+    screen: BarcodeScanner,
+  },
+};
+const AppNavigator = createStackNavigator(screens);
+
+export default createAppContainer(AppNavigator);

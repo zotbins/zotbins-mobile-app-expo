@@ -13,14 +13,7 @@ import { Dimensions } from "react-native";
 import ZotBinColors from "../constants/ZotBinColors";
 import CalculateDiversionRate from "../api/CalculateDiversionRate";
 
-import {
-  LineChart,
-  BarChart,
-  PieChart,
-  ProgressChart,
-  ContributionGraph,
-  StackedBarChart,
-} from "react-native-chart-kit";
+import { LineChart } from "react-native-chart-kit";
 
 // TODO: Need to plugin actual values with API requests
 // Raw Values
