@@ -2,7 +2,6 @@ import React from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 import { TabView, SceneMap } from "react-native-tab-view";
 import { useNavigation } from "@react-navigation/native";
-import PieChart from "react-native-pie-chart";
 import { Ionicons } from "@expo/vector-icons";
 import ZotBinColors from "../../constants/ZotBinColors";
 import ZotBinsObservationsGetRequest from "../../api/ZotBinsObservationsGetRequest";
@@ -31,18 +30,6 @@ const HomeScreenDonutView = () => (
     <View
       style={{ flex: 5, backgroundColor: "white", justifyContent: "center" }}
     >
-      <PieChart
-        style={{ marginTop: 25, marginBottom: 25 }}
-        chart_wh={250}
-        series={[myCompostValue, myRecyclableValue, myWasteValue]}
-        sliceColor={[
-          ZotBinColors.compostColor,
-          ZotBinColors.recyclableColor,
-          ZotBinColors.wasteColor,
-        ]}
-        doughnut={true}
-        coverRadius={0.6}
-      />
       <Text
         style={{
           position: "absolute",

@@ -8,14 +8,7 @@ import ZotBinsObservationsGetRequest from "../../api/ZotBinsObservationsGetReque
 import CalculateDiversionRate from "../../api/CalculateDiversionRate";
 import { Dimensions } from "react-native";
 
-import {
-  LineChart,
-  BarChart,
-  PieChart,
-  ProgressChart,
-  ContributionGraph,
-  StackedBarChart,
-} from "react-native-chart-kit";
+import { StackedBarChart } from "react-native-chart-kit";
 
 // TODO: Need to plugin actual values with API requests
 // Raw Values
