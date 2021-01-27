@@ -7,6 +7,11 @@ module.exports = {
   ],
   plugins: ['prettier', 'jsx-a11y'],
   rules: {
-    'prettier/prettier': 'warn',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
   },
 }

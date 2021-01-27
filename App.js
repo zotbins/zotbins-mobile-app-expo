@@ -10,7 +10,7 @@ import firebase from 'firebase'
 import AppNavigator from './navigation/AppNavigator'
 import { firebaseConfig } from './config'
 
-if (firebase.apps.length == 0) {
+if (firebase.apps.length === 0) {
   firebase.initializeApp(firebaseConfig)
 }
 
