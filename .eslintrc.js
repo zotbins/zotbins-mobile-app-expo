@@ -8,6 +8,5 @@ module.exports = {
   plugins: ['prettier', 'jsx-a11y'],
   rules: {
     'prettier/prettier': 'warn',
-    'jsx-a11y/rule-name': 2,
   },
 }
