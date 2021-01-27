@@ -1,21 +1,21 @@
-import React from "react";
-import { Platform } from "react-native";
-import { createStackNavigator } from "react-navigation-stack";
-import { createBottomTabNavigator } from "react-navigation-tabs";
+import React from 'react'
+import { Platform } from 'react-native'
+import { createStackNavigator } from 'react-navigation-stack'
+import { createBottomTabNavigator } from 'react-navigation-tabs'
 
-import IoniconsTabBarIcon from "../components/TabNavigatorComponents/IoniconsTabBarIcon";
-import AntDesignTabBarIcon from "../components/TabNavigatorComponents/AntDesignTabBarIcon";
-import HomeScreen from "../screens/HomeScreen";
-import LinksScreen from "../screens/LinksScreen";
-import SettingsScreen from "../screens/SettingsScreen";
-import TrendsScreen from "../screens/TrendsScreen";
-import WasteScreen from "../screens/WasteScreen";
-import ZotBinColors from "../constants/ZotBinColors";
+import IoniconsTabBarIcon from '../components/TabNavigatorComponents/IoniconsTabBarIcon'
+import AntDesignTabBarIcon from '../components/TabNavigatorComponents/AntDesignTabBarIcon'
+import HomeScreen from '../screens/HomeScreen'
+import LinksScreen from '../screens/LinksScreen'
+import SettingsScreen from '../screens/SettingsScreen'
+import TrendsScreen from '../screens/TrendsScreen'
+import WasteScreen from '../screens/WasteScreen'
+import ZotBinColors from '../constants/ZotBinColors'
 
 const config = Platform.select({
-  web: { headerMode: "screen" },
+  web: { headerMode: 'screen' },
   default: {},
-});
+})
 
 const HomeStack = createStackNavigator(
   {
@@ -24,67 +24,67 @@ const HomeStack = createStackNavigator(
     Waste: WasteScreen,
   },
   config
-);
+)
 
 HomeStack.navigationOptions = {
-  tabBarLabel: "INSIGHT",
+  tabBarLabel: 'INSIGHT',
   tabBarOptions: {
     activeTintColor: ZotBinColors.tintColor,
     inactiveTintColor: ZotBinColors.inactiveColor,
   },
   tabBarIcon: ({ focused }) => (
-    <AntDesignTabBarIcon focused={focused} name={"barschart"} />
+    <AntDesignTabBarIcon focused={focused} name={'barschart'} />
   ),
-};
+}
 
-HomeStack.path = "";
+HomeStack.path = ''
 
 const LinksStack = createStackNavigator(
   {
     Links: LinksScreen,
   },
   config
-);
+)
 
 LinksStack.navigationOptions = {
-  tabBarLabel: "TOOLS",
+  tabBarLabel: 'TOOLS',
   tabBarOptions: {
     activeTintColor: ZotBinColors.tintColor,
     inactiveTintColor: ZotBinColors.inactiveColor,
   },
   tabBarIcon: ({ focused }) => (
-    <IoniconsTabBarIcon focused={focused} name={"md-trash"} />
+    <IoniconsTabBarIcon focused={focused} name={'md-trash'} />
   ),
-};
+}
 
-LinksStack.path = "";
+LinksStack.path = ''
 
 const SettingsStack = createStackNavigator(
   {
     Settings: SettingsScreen,
   },
   config
-);
+)
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: "ACCOUNT",
+  tabBarLabel: 'ACCOUNT',
   tabBarOptions: {
     activeTintColor: ZotBinColors.tintColor,
     inactiveTintColor: ZotBinColors.inactiveColor,
   },
   tabBarIcon: ({ focused }) => (
-    <IoniconsTabBarIcon focused={focused} name={"md-person"} />
+    <IoniconsTabBarIcon focused={focused} name={'md-person'} />
   ),
-};
+}
 
-SettingsStack.path = "";
+SettingsStack.path = ''
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LinksStack,
   SettingsStack,
-});
+})
 
-tabNavigator.path = "";
+tabNavigator.path = ''
 
-export default tabNavigator;
+export default tabNavigator

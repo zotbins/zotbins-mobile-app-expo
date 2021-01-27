@@ -1,47 +1,47 @@
-import React, { Component } from "react";
-import { StyleSheet, Text, View, Dimensions, Button } from "react-native";
-import { BarCodeScanner } from "expo-barcode-scanner";
-import axios from "axios";
+import React, { Component } from 'react'
+import { StyleSheet, Text, View, Dimensions, Button } from 'react-native'
+import { BarCodeScanner } from 'expo-barcode-scanner'
+import axios from 'axios'
 
-const DEVICE_WIDTH = Dimensions.get("window").width;
-const DEVICE_HEIGHT = Dimensions.get("window").height;
+const DEVICE_WIDTH = Dimensions.get('window').width
+const DEVICE_HEIGHT = Dimensions.get('window').height
 
 export default class BarcodeScanner extends Component {
   state = {
     data: {},
-  };
+  }
   barCodeScanned = ({ data }) => {
-    var self = this;
+    var self = this
     axios
-      .get("https://zotbins.pythonanywhere.com/barcode/get", {
+      .get('https://zotbins.pythonanywhere.com/barcode/get', {
         params: { barcode: data },
       })
       .then(function (response) {
-        self.setState({ data: response.data });
+        self.setState({ data: response.data })
         alert(
-          "Instructions: " +
+          'Instructions: ' +
             data.instructions +
-            "\n" +
-            "Name: " +
+            '\n' +
+            'Name: ' +
             data.name +
-            "\n" +
-            "Type: " +
+            '\n' +
+            'Type: ' +
             data.type +
-            "Waste Bin: " +
+            'Waste Bin: ' +
             data.wastebin
-        );
+        )
       })
       .catch(function (error) {
-        console.log(error);
-      });
-  };
+        console.log(error)
+      })
+  }
   render() {
     return (
       <View
         style={{
           flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
         <BarCodeScanner
@@ -52,6 +52,6 @@ export default class BarcodeScanner extends Component {
           }}
         ></BarCodeScanner>
       </View>
-    );
+    )
   }
 }

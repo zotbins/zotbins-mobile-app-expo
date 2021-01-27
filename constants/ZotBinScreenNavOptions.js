@@ -11,8 +11,8 @@ export default function ZotBinScreenNavOptions(title) {
       elevation: 0,
     },
     headerTitleStyle: {
-      fontWeight: "bold",
+      fontWeight: 'bold',
       fontSize: 35,
     },
-  };
+  }
 }
