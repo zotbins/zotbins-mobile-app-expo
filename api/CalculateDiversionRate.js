@@ -4,7 +4,7 @@ export default function calculateDiversionRate(
   wasteValue
 ) {
   let diversionValue =
-    (recycleValue + compostValue) / (recycleValue + compostValue + wasteValue);
-  diversionValue = parseInt(diversionValue * 100);
-  return diversionValue;
+    (recycleValue + compostValue) / (recycleValue + compostValue + wasteValue)
+  diversionValue = parseInt(diversionValue * 100)
+  return diversionValue
 }

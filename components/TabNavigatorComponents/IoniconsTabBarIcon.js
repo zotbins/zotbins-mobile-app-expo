@@ -1,7 +1,7 @@
-import React from "react";
-import { Ionicons } from "@expo/vector-icons";
+import React from 'react'
+import { Ionicons } from '@expo/vector-icons'
 
-import ZotBinColors from "../../constants/ZotBinColors";
+import ZotBinColors from '../../constants/ZotBinColors'
 
 export default function IoniconsTabBarIcon(props) {
   return (
@@ -15,5 +15,5 @@ export default function IoniconsTabBarIcon(props) {
           : ZotBinColors.tabIconDefault
       }
     />
-  );
+  )
 }

@@ -1,7 +1,7 @@
-import React from "react";
-import { AntDesign } from "@expo/vector-icons";
+import React from 'react'
+import { AntDesign } from '@expo/vector-icons'
 
-import ZotBinColors from "../../constants/ZotBinColors";
+import ZotBinColors from '../../constants/ZotBinColors'
 
 export default function AntDesignTabBarIcon(props) {
   return (
@@ -15,5 +15,5 @@ export default function AntDesignTabBarIcon(props) {
           : ZotBinColors.tabIconDefault
       }
     />
-  );
+  )
 }

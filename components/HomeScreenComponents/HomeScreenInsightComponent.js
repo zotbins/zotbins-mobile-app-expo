@@ -1,25 +1,25 @@
-import React from "react";
-import { Text, View, TouchableOpacity } from "react-native";
-import { TabView, SceneMap } from "react-native-tab-view";
-import { useNavigation } from "@react-navigation/native";
-import { Ionicons } from "@expo/vector-icons";
-import ZotBinColors from "../../constants/ZotBinColors";
-import ZotBinsObservationsGetRequest from "../../api/ZotBinsObservationsGetRequest";
+import React from 'react'
+import { Text, View, TouchableOpacity } from 'react-native'
+import { TabView, SceneMap } from 'react-native-tab-view'
+import { useNavigation } from '@react-navigation/native'
+import { Ionicons } from '@expo/vector-icons'
+import ZotBinColors from '../../constants/ZotBinColors'
+import ZotBinsObservationsGetRequest from '../../api/ZotBinsObservationsGetRequest'
 
-const currentMonth = "March";
-const myWasteValue = 55; //ZotBinsObservationsGetRequest("waste");
-const myRecyclableValue = 31; //ZotBinsObservationsGetRequest("recycle");
-const myCompostValue = 14; //ZotBinsObservationsGetRequest("compost");
+const currentMonth = 'March'
+const myWasteValue = 55 //ZotBinsObservationsGetRequest("waste");
+const myRecyclableValue = 31 //ZotBinsObservationsGetRequest("recycle");
+const myCompostValue = 14 //ZotBinsObservationsGetRequest("compost");
 // TODO: Need to use componentDidMount to wait for the GET request result
 
 const HomeScreenDonutView = () => (
   <View style={{ flex: 2 }}>
     <View
-      style={{ flex: 1, backgroundColor: "white", justifyContent: "center" }}
+      style={{ flex: 1, backgroundColor: 'white', justifyContent: 'center' }}
     >
       <Text
         style={{
-          textAlign: "center",
+          textAlign: 'center',
           fontSize: 18,
           color: ZotBinColors.inactiveColor,
         }}
@@ -28,28 +28,28 @@ const HomeScreenDonutView = () => (
       </Text>
     </View>
     <View
-      style={{ flex: 5, backgroundColor: "white", justifyContent: "center" }}
+      style={{ flex: 5, backgroundColor: 'white', justifyContent: 'center' }}
     >
       <Text
         style={{
-          position: "absolute",
-          alignSelf: "center",
-          textAlign: "center",
+          position: 'absolute',
+          alignSelf: 'center',
+          textAlign: 'center',
           fontSize: 20,
-          fontWeight: "bold",
+          fontWeight: 'bold',
         }}
       >
-        {"Disposable\nActivity"}
+        {'Disposable\nActivity'}
       </Text>
     </View>
     <View
-      style={{ flex: 1, justifyContent: "center", backgroundColor: "white" }}
+      style={{ flex: 1, justifyContent: 'center', backgroundColor: 'white' }}
     >
-      <View style={{ flex: 1, flexDirection: "row" }}>
+      <View style={{ flex: 1, flexDirection: 'row' }}>
         <View
           style={{
             flex: 1,
-            alignItems: "center",
+            alignItems: 'center',
             borderColor: ZotBinColors.wasteColor,
             borderBottomWidth: 5,
           }}
@@ -62,7 +62,7 @@ const HomeScreenDonutView = () => (
         <View
           style={{
             flex: 1,
-            alignItems: "center",
+            alignItems: 'center',
             borderColor: ZotBinColors.recyclableColor,
             borderBottomWidth: 5,
           }}
@@ -75,7 +75,7 @@ const HomeScreenDonutView = () => (
         <View
           style={{
             flex: 1,
-            alignItems: "center",
+            alignItems: 'center',
             borderColor: ZotBinColors.compostColor,
             borderBottomWidth: 5,
           }}
@@ -88,18 +88,18 @@ const HomeScreenDonutView = () => (
       </View>
     </View>
   </View>
-);
+)
 
 export default function HomeScreenInsightComponent(props) {
   return (
-    <View style={{ alignItems: "center" }}>
+    <View style={{ alignItems: 'center' }}>
       <View>
         <HomeScreenDonutView />
         <View
           style={{
             flex: 1,
-            justifyContent: "center",
-            backgroundColor: "white",
+            justifyContent: 'center',
+            backgroundColor: 'white',
             marginBottom: 25,
           }}
         >
@@ -110,10 +110,10 @@ export default function HomeScreenInsightComponent(props) {
               paddingBottom: 15,
               borderBottomWidth: 2,
             }}
-            onPress={() => props.navigation.navigate("Trends")}
+            onPress={() => props.navigation.navigate('Trends')}
           >
             <Text style={{ fontSize: 18 }}>
-              View Personal Trends <Ionicons name={"md-arrow-dropright"} />
+              View Personal Trends <Ionicons name={'md-arrow-dropright'} />
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -123,14 +123,14 @@ export default function HomeScreenInsightComponent(props) {
               paddingBottom: 15,
               borderBottomWidth: 2,
             }}
-            onPress={() => props.navigation.navigate("Waste")}
+            onPress={() => props.navigation.navigate('Waste')}
           >
             <Text style={{ fontSize: 18 }}>
-              View Waste Activity <Ionicons name={"md-arrow-dropright"} />
+              View Waste Activity <Ionicons name={'md-arrow-dropright'} />
             </Text>
           </TouchableOpacity>
         </View>
       </View>
     </View>
-  );
+  )
 }

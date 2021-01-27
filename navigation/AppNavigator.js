@@ -1,5 +1,5 @@
-import { createSwitchNavigator } from "react-navigation";
-import Home from "../screens/Home/HomeView";
+import { createSwitchNavigator } from 'react-navigation'
+import Home from '../screens/Home/HomeView'
 import LoginView from '../screens/Login/LoginView'
 
 /**
@@ -8,7 +8,7 @@ import LoginView from '../screens/Login/LoginView'
 
 const routes = {
   initialRoute: LoginView,
-  authenticatedRoute: Home
+  authenticatedRoute: Home,
 }
 
-export const AppNavigator = createSwitchNavigator(routes);
+export const AppNavigator = createSwitchNavigator(routes)
