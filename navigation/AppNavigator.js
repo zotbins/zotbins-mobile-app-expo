@@ -1,18 +1,14 @@
-import { createStackNavigator } from "react-navigation-stack";
-import { createAppContainer } from "react-navigation";
-import Home from "../screens/HomeView/Home";
-import BarcodeScanner from "../components/BarcodeScanner";
+import { createSwitchNavigator } from "react-navigation";
+import Home from "../screens/Home/HomeView";
+import LoginView from '../screens/Login/LoginView'
 
-//import MainTabNavigator from "./MainTabNavigator";
+/**
+ * We use switch navigation so that we differentiate between authenticated and unauthenticated routes
+ */
 
-const screens = {
-  Home: {
-    screen: Home,
-  },
-  BarcodeScanner: {
-    screen: BarcodeScanner,
-  },
-};
-const AppNavigator = createStackNavigator(screens);
+const routes = {
+  initialRoute: LoginView,
+  authenticatedRoute: Home
+}
 
-export default createAppContainer(AppNavigator);
+export const AppNavigator = createSwitchNavigator(routes);
